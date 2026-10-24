@@ -1,0 +1,124 @@
+/* 店内カルーセル。横スクロールと表示の強調を分けて管理する。 */
+.space .space-carousel {
+    display:grid;
+    grid-template-columns:minmax(0, 1fr);
+    align-items:center;
+    row-gap:4px;
+    padding:24px 0 24px;
+}
+
+.space-carousel .carousel {
+    grid-column:1;
+    grid-row:1;
+    min-width:0;
+    overflow-x:auto;
+    overflow-y:hidden;
+    scroll-snap-type:x mandatory;
+    scrollbar-width:none;
+    overscroll-behavior-x:contain;
+    border-radius:8px;
+}
+
+.space-carousel .carousel::-webkit-scrollbar {
+    display:none;
+}
+
+.space-carousel .carousel ol {
+    display:flex;
+    align-items:center;
+    gap:20px;
+    padding:22px 0;
+}
+
+.space-carousel .carousel li {
+    flex:0 0 58%;
+    min-width:0;
+    aspect-ratio:3 / 2;
+    overflow:hidden;
+    border-radius:6px;
+    scroll-snap-align:center;
+    opacity:0.6;
+    transform:scale(0.94);
+    transition:opacity 0.6s ease, transform 0.6s ease;
+}
+
+.space-carousel .carousel li.is-active {
+    opacity:1;
+    transform:scale(1.02);
+}
+
+.space-carousel .carousel img {
+    display:block;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.space-carousel button {
+    cursor:pointer;
+    color:#fff;
+    background:rgb(32 36 31 / 65%);
+    font:inherit;
+}
+
+.space-carousel .carousel-prev,
+.space-carousel .carousel-next {
+    grid-column:1;
+    grid-row:1;
+    z-index:1;
+    display:grid;
+    place-items:center;
+    width:56px;
+    height:56px;
+    margin-inline:18px;
+    border:1px solid rgb(255 255 255 / 55%);
+    border-radius:50%;
+    box-shadow:0 2px 12px rgb(0 0 0 / 16%);
+    font-size:26px;
+    transition:background-color 0.2s;
+}
+
+.space-carousel .carousel-prev { justify-self:start; }
+.space-carousel .carousel-next { justify-self:end; }
+
+.space-carousel button:hover {
+    background:rgb(32 36 31 / 85%);
+}
+
+.space-carousel :focus-visible {
+    outline:2px solid #4a5c45;
+    outline-offset:3px;
+}
+
+.space-carousel .carousel-counter {
+    grid-column:1;
+    grid-row:2;
+    justify-self:center;
+    color:rgb(57 61 54 / 45%);
+    font-size:11px;
+    letter-spacing:0.12em;
+    font-variant-numeric:tabular-nums;
+}
+
+@media (max-width:600px) {
+    .space .space-carousel {
+        padding:12px 0 20px;
+    }
+
+    .space-carousel .carousel li {
+        flex-basis:78%;
+    }
+
+    .space-carousel .carousel-prev,
+    .space-carousel .carousel-next {
+        width:52px;
+        height:52px;
+        margin-inline:10px;
+    }
+}
+
+@media (prefers-reduced-motion:reduce) {
+    .space-carousel .carousel li {
+        transition:none;
+    }
+}

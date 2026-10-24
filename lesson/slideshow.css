@@ -1,0 +1,29 @@
+/* 重なったイメージ */
+.hero{
+    ol{
+        position:relative;
+        height:50vh;
+        li{
+            position:absolute;
+            top:0;
+            left:0;
+            width:100%;
+            height:100%;
+            overflow:hidden;
+            img{
+                width:100%;
+                height:100%;
+                object-fit:cover;
+            }
+        }
+    }
+}
+
+/* アニメーション処理 */
+.hero li:last-child{
+    transition:5s;
+    &.active{
+        opacity:0;
+        transition-delay:1s;
+    }
+}

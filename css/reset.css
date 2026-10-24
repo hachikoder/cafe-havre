@@ -1,0 +1,18 @@
+/* デフォルトデザインをリセットする */
+*{
+    /* 余白関係のリセット */
+    margin:0;
+    padding:0;
+
+    /* 文字関係のリセット */
+    font-family:sans-serif;
+    font-style:normal;
+    font-weight:normal;
+
+    /* 装飾関係のリセット */
+    border:none;
+    list-style:none;
+
+    /* サイズ関係のリセット */
+    box-sizing:border-box;
+}

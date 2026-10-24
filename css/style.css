@@ -1,0 +1,296 @@
+html{
+    scroll-behavior:smooth;
+    scroll-padding-top:80px;
+}
+
+header{
+    position:sticky;
+    top:0;
+    z-index:100;
+    background:#999;
+    height:80px;
+    ul{
+        display:flex;
+        gap:1.2em;
+        width:fit-content;
+        margin-left:auto;
+        margin-right:auto;
+        padding-top:1.75em;
+        li{
+            a{
+                text-transform:uppercase;
+                color:white;
+                text-decoration:none;
+            }
+        }
+    }
+}
+
+.space h1,
+.space .container,
+.access{
+    max-width:1000px;
+    margin: 0px auto;
+}
+
+.story,
+.philosophy,
+.menu,
+.space,
+.access{
+    padding: 40px 0;
+}
+
+.philosophy,
+.space{
+    background:#ddd;
+}
+
+.hero{
+    ol{
+        position:relative;
+        height:50vh;
+        li{
+            position:absolute;
+            top:0;
+            left:0;
+            width:100%;
+            height:100%;
+            overflow:hidden;
+            img{
+                width:100%;
+                height:100%;
+                object-fit:cover;
+            }
+        }
+    }
+}
+
+/* .hero li:last-child:hover{
+    opacity: 0;
+    transition: 1s;
+} */
+
+.story{
+    max-width: 1000px;
+    margin-inline: auto;
+}
+
+.story h1{
+
+}
+
+.section_title{
+    font-size: 36px;
+    padding-bottom: 20px;
+}
+
+.story .intro_area{
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
+    padding: 40px 0;
+}
+
+@media (max-width:600px){
+    .story{
+        padding: 40px 16px;
+    }
+    .story .intro_area{
+        display: block;
+        align-items: flex-start;
+        gap: 40px;
+        padding: 40px 0;
+    }
+}
+
+.intro_area .intro{
+    display:flex;
+    flex-direction:column; /* 縦並び */
+    gap:20px;
+    padding: 20px 0;
+}
+
+.intro_area .image{
+
+}
+
+.intro_area .intro{
+    flex:3;
+    min-width:0;  
+}
+.intro_area .image {
+    flex:2;             /* 左右に同じ割合で幅を割り当てる */
+    min-width:0;        /* 中身による幅のはみ出しを防ぐ */
+}
+
+.intro_area .image img {
+    display:block;
+    width:100%;         /* 入れ物の幅に合わせる */
+    height:auto;        /* 元の縦横比を保つ */
+}
+
+.story .text{
+    display:flex;
+    flex-direction:column; /* 縦並び */
+    gap:20px;
+    padding: 20px 0;
+}
+
+.menu .intro_area{
+    display: flex;
+}
+.story .text{
+    margin-inline: auto;
+    max-width: 35em;
+}
+
+/* 哲学！ */
+.philosophy{
+    padding:60px 24px;
+    background:#ddd;
+    color:#333;
+}
+
+.philosophy > h1,
+.philosophy > .container{
+    max-width:960px;
+    margin-inline:auto;
+}
+
+/* HTMLの見出しを保ち、番号・区切り線・英字をCSSで配置する。 */
+.philosophy > h1{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    height:16px;
+    margin-bottom:56px;
+    color:#fff;
+    font-size:0;
+    background:linear-gradient(#eee, #eee) 32px center / calc(100% - 124px) 1px no-repeat;
+}
+
+.philosophy > h1::before{
+    content:"02";
+    font-size:12px;
+}
+
+.philosophy > h1::after{
+    content:"PHILOSOPHY";
+    font-size:12px;
+}
+
+.philosophy .intro{
+    margin-bottom:56px;
+    color:#fff;
+    text-align:center;
+}
+
+.philosophy .section_title{
+    padding:0;
+    font-size:32px;
+    font-weight:500;
+    line-height:1.25;
+}
+
+.philosophy .intro > p{
+    margin-top:56px;
+    font-size:16px;
+    line-height:1.5;
+}
+
+.philosophy .items{
+    display:grid;
+    grid-template-columns:repeat(3, minmax(0, 1fr));
+    border:1px solid #999;
+    background:#fff;
+}
+
+.philosophy .items > section{
+    min-width:0;
+    min-height:298px;
+    padding:32px;
+}
+
+.philosophy .items > section + section{
+    border-left:1px solid #aaa;
+}
+
+.philosophy .items span{
+    display:inline-grid;
+    place-items:center;
+    width:24px;
+    height:24px;
+    background:#999;
+    color:#fff;
+    font-size:16px;
+    line-height:1;
+}
+
+.philosophy .items h3{
+    margin-top:16px;
+    margin-bottom:12px;
+    font-size:20px;
+    font-weight:500;
+    line-height:1.4;
+    overflow-wrap:anywhere;
+}
+
+.philosophy .items p{
+    font-size:16px;
+    line-height:1.5;
+    overflow-wrap:anywhere;
+}
+
+.access{
+    .container{
+        display:flex;
+        gap:40px;
+    }
+    .image{
+        width:460px;
+        height:325px;
+        overflow:hidden;
+        img{
+            width:100%;
+            height:100%;
+            object-fit:cover;
+        }
+    }
+    .info{
+        dl{
+            margin-bottom:1.5em;
+            dt{
+                font-size:13px;
+                border-bottom-width:1px;
+                border-bottom-color:#ddd;
+                border-bottom-style:solid;
+                padding-bottom:0.25em;
+                margin-bottom:0.75em;
+            }
+            dd{
+                font-size:16px;
+                line-height:1.5em;
+            }
+        }
+    }
+}
+
+footer{
+    background:#999;
+    color:white;
+    display:flex;
+    justify-content:space-between;
+    height:120px;
+    padding-left:40px;
+    padding-right:40px;
+    align-items:center;
+    .links{
+        display:flex;
+        gap:1.2em;
+    }
+    a{
+        color:white;
+        text-decoration:none;
+    }
+}

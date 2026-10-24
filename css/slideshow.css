@@ -1,0 +1,7 @@
+.hero li:last-child{
+    transition-duration: 5s;
+}
+.hero li:last-child.active{
+    transition-delay: 1s;
+    opacity: 0;
+}
